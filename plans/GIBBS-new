@@ -1,0 +1,23 @@
+#!/bin/bash
+#PBS -S /bin/bash
+#PBS -l walltime=6:00:00
+#PBS -l mem=5000mb
+#PBS -r n
+#PBS -e /dev/null
+#PBS -o /dev/null
+
+export PATH=/global/software/R-3.1.0-rh6/bin/:$PATH
+export SPECIFIED_RESULT_FOLDER=results/all/@{individualExec.getName()}
+
+export R_LIBS=~/.R_libs/
+[ -d $R_LIBS ] || mkdir $R_LIBS
+
+~/bin/jdk1.8.0_20/bin/java -Xmx4g -cp @{codeRepo}/build/install/@{codeRepoName()}/lib/\* \
+  multilevel.MultiLevelMain \
+    -np 1000 \
+    -inputData data/preprocessedNYSData.csv \
+    -samplingMethod GIBBS \
+    -nMCMCSweeps 10000 \
+    -initGibbsWithStdSMC @@{true,false} \
+    -mainRandom @@{1--10} \
+    -useUniformVariance false
