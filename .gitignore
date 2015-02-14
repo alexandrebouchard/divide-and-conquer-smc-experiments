@@ -16,3 +16,4 @@ analyses/correctness
 *.Rhistory
 .RData
 *.Rproj
+.Rproj.user

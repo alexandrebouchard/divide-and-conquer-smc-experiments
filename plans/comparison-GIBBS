@@ -18,6 +18,6 @@ export R_LIBS=~/.R_libs/
     -inputData data/preprocessedNYSData.csv \
     -samplingMethod GIBBS \
     -nMCMCSweeps @@{10^[1 -- 5]} \
-    -initGibbsWithStdSMC {true,false} \
+    -initGibbsWithStdSMC @@{true,false} \
     -mainRandom @@{1--10} \
     -useUniformVariance @@{true,false}
