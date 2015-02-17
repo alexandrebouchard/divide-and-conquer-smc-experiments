@@ -17,3 +17,4 @@ analyses/correctness
 .RData
 *.Rproj
 .Rproj.user
+.codeTransferred
