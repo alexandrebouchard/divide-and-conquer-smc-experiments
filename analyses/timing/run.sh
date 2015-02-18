@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Gather the data---only need to run once:
-# wrun-collect -simple executionInfo/end-time.txt -where "(plan = 'SMC-small' and git_commit_time = '2015-02-10 23:32:44' and model_use_uniform_variance = 'false') or (thin = '10' and stan_data_folder = 'data/NY-stan')" -save
+# wrun-collect -simple executionInfo/end-time.txt -where "(plan = 'SMC-small' and git_commit_time = '2015-02-10 23:32:44' and model_use_uniform_variance = 'false') or (thin = '10' and stan_data_folder = 'data/NY-stan') or (plan = 'GIBBS-new' and init_gibbs_with_std_smc	= 'false' and git_commit_time = '2015-02-12 23:50:23')" -save
 # cp results/latest/db.sqlite timing.sqlite
 
 

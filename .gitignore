@@ -18,3 +18,4 @@ analyses/correctness
 *.Rproj
 .Rproj.user
 .codeTransferred
+plans/more-SMC-replicates-results
