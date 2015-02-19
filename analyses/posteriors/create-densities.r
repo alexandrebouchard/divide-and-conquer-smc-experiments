@@ -17,12 +17,12 @@ p <- ggplot(data, aes(x = parameter))  +
   facet_grid(. ~ node) + 
   theme_bw() +
   coord_flip() +
-  xlab("Imputed mean parameter value") +
+  xlab("Mean parameter") +
   ylab("Posterior density approximation") +
   theme(strip.background = element_blank(),
         panel.border = element_rect(colour = "black"))
   
-ggsave("densities.pdf", p, width = 6, height = 3)
+ggsave("densities.pdf", p, width = 6, height = 2)
 
 # total n gibbs sweeps: 950
 # to transform into # iteration: multiply by 3555
