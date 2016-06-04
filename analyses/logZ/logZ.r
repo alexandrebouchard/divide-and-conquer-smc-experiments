@@ -10,6 +10,7 @@ p <- ggplot(data, aes(x = factor(dc_n_particles), y = estimate)) +
   geom_boxplot(aes(fill = sampling_method)) +
   ylab("Estimate of log(Z)") +
   xlab("Number of particles (log scale)") +
-  theme_bw() 
+  theme_bw() + 
+  theme(legend.justification=c(1,0), legend.position=c(1,0))
 
 ggsave("logZ.pdf", p, width = 7, height = 5)
